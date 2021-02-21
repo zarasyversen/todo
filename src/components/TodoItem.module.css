@@ -10,17 +10,19 @@
 }
 
 .item button {
-  font-size: 12px;
-  background: #33cccc;
-  color: #333;
+  background: transparent;
   border: none;
   cursor: pointer;
   float: right;
   outline: none;
-  border-radius: 100px;
+  border-radius: 50%;
   height: 50px;
   width: 50px;
   margin: -10px 0 0 10px;
+}
+.item button:hover, 
+.item button:focus {
+  background: rgb(254, 124, 124);
 }
 
 .textInput {

@@ -29,6 +29,7 @@ body {
   width: 100%;
   margin-bottom: 20px;
   display: flex;
+  align-items: center;
   border-radius: calc(0.5 * 100px);
   box-shadow: 0 1px 6px 0 rgba(0, 0, 0, 0.38);
   justify-content: space-evenly;
@@ -41,6 +42,7 @@ body {
   padding-right: 5px;
   padding-left: 10px;
   border-radius: calc(0.5 * 100px);
+  height: 45px;
 }
 
 .input-text::placeholder {
@@ -48,17 +50,30 @@ body {
 }
 
 .input-submit {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   background: transparent;
-  color: #333;
-  text-transform: capitalize;
   cursor: pointer;
-  font-weight: 600;
-  margin-right: 10px;
+  border-radius: 50%;
+  height: 40px;
+  width: 40px;
+  transition: background-color .3s;
+}
+
+.input-submit:hover, 
+.input-submit:focus {
+  background-color: rgb(162, 255, 162);
+}
+
+svg {
+  width: 20px;
+  height: 20px;
+  fill: #333;
 }
 
 .input-text,
 .input-submit {
-  height: 45px;
   outline: none;
   border: none;
 }
