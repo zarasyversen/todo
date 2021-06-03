@@ -7,6 +7,7 @@ import Header from "./Header"
 import InputTodo from "./InputTodo"
 import TodosList from "./TodosList"
 import Navbar from "./Navbar"
+import Counter from "./Counter"
 
 
 const TodoContainer = () => {
@@ -74,6 +75,7 @@ const TodoContainer = () => {
             <div className="inner">
               <Header />
               <InputTodo addTodoProps={addTodoItem} />
+              <Counter todos={todos} />
               <TodosList 
                 todos={todos}
                 handleChangeProps={handleChange}
