@@ -28,7 +28,7 @@ const TodoItem = (props) => {
     textDecoration: "line-through",
   };
 
-  const { completed, id, title } = props.todo;
+  const { completed, id, title, updated, time, day } = props.todo;
 
   let viewMode = {};
   let editMode = {};
@@ -43,6 +43,7 @@ const TodoItem = (props) => {
       <div onDoubleClick={handleEditing} style={viewMode}>
         <input
           type="checkbox"
+          id={id}
           className={styles.checkbox}
           checked={completed}
           onChange={() => props.handleChangeProps(id)}
@@ -50,7 +51,8 @@ const TodoItem = (props) => {
         <button onClick={() => props.deleteTodoProps(id)}>
           <FaTrashAlt />
         </button>
-        <span style={completed ? completedStyle : null}>{title}</span>
+        <label htmlFor={id} style={completed ? completedStyle : null}>{title}</label>
+        <p>{updated ? 'Updated:' : 'Created:'}{time} on {day}</p>
       </div>
       <input
         type="text"

@@ -34,11 +34,27 @@ const TodoContainer = () => {
     ]);
   };
 
+  const getCurrentDay = () => {
+    return new Date().toLocaleString("en-GB", { weekday: "long" });
+  }
+
+  const getCurrentTime = () => {
+    const now = new Date();
+    const currentHours = now.getHours();
+    const currentMinutes = now.getMinutes();
+
+    return `${currentHours}:${currentMinutes}`;
+  }
+
   const addTodoItem = (title) => {
+    
     const newTodo = {
       id: uuidv4(),
       title: title,
       completed: false,
+      updated: false,
+      day: getCurrentDay(),
+      time: getCurrentTime()
     };
     setTodos([...todos, newTodo]);
   };
@@ -48,6 +64,9 @@ const TodoContainer = () => {
       todos.map((todo) => {
         if (todo.id === id) {
           todo.title = updatedTitle;
+          todo.updated = true;
+          todo.day = getCurrentDay();
+          todo.time = getCurrentTime();
         }
         return todo;
       })
