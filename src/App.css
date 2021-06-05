@@ -58,10 +58,10 @@ body {
   border-radius: 50%;
   height: 40px;
   width: 40px;
-  transition: background-color .3s;
+  transition: background-color 0.3s;
 }
 
-.input-submit:hover, 
+.input-submit:hover,
 .input-submit:focus {
   background-color: rgb(162, 255, 162);
 }

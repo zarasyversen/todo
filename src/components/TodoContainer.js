@@ -1,70 +1,69 @@
-import React, { useState, useEffect } from "react"
-import { Route, Switch } from "react-router-dom"
-import About from "../pages/About"
-import NotMatch from "../pages/NoMatch"
+import React, { useState, useEffect } from "react";
+import { Route, Switch } from "react-router-dom";
+import About from "../pages/About";
+import NotMatch from "../pages/NoMatch";
 import { v4 as uuidv4 } from "uuid";
-import Header from "./Header"
-import InputTodo from "./InputTodo"
-import TodosList from "./TodosList"
-import Navbar from "./Navbar"
-import Counter from "./Counter"
-
+import Header from "./Header";
+import InputTodo from "./InputTodo";
+import TodosList from "./TodosList";
+import Navbar from "./Navbar";
+import Counter from "./Counter";
 
 const TodoContainer = () => {
   const [todos, setTodos] = useState(getInitialTodos());
 
-  const handleChange = id => {
-    setTodos(prevState =>
-      prevState.map(todo => {
+  const handleChange = (id) => {
+    setTodos((prevState) =>
+      prevState.map((todo) => {
         if (todo.id === id) {
           return {
             ...todo,
             completed: !todo.completed,
-          }
+          };
         }
-        return todo
+        return todo;
       })
-    )
-  }
+    );
+  };
 
-  const deleteTodo = id => {
+  const deleteTodo = (id) => {
     setTodos([
-      ...todos.filter(todo => {
-        return todo.id !== id
+      ...todos.filter((todo) => {
+        return todo.id !== id;
       }),
-    ])
-  }
+    ]);
+  };
 
-  const addTodoItem = title => {
+  const addTodoItem = (title) => {
     const newTodo = {
       id: uuidv4(),
       title: title,
-      completed: false
+      completed: false,
     };
-    setTodos([...todos, newTodo])
-  }
+    setTodos([...todos, newTodo]);
+  };
 
   const setUpdate = (updatedTitle, id) => {
     setTodos(
-      todos.map(todo => {
+      todos.map((todo) => {
         if (todo.id === id) {
-          todo.title = updatedTitle
+          todo.title = updatedTitle;
         }
-        return todo
+        return todo;
       })
-    )
-  }
+    );
+  };
 
   function getInitialTodos() {
-    const temp = localStorage.getItem("todos")
-    const savedTodos = JSON.parse(temp)
-    return savedTodos || []
+    const temp = localStorage.getItem("todos");
+    const savedTodos = JSON.parse(temp);
+    return savedTodos || [];
   }
 
   useEffect(() => {
-    const temp = JSON.stringify(todos)
-    localStorage.setItem("todos", temp)
-  }, [todos])
+    const temp = JSON.stringify(todos);
+    localStorage.setItem("todos", temp);
+  }, [todos]);
 
   return (
     <>
@@ -76,7 +75,7 @@ const TodoContainer = () => {
               <Header />
               <InputTodo addTodoProps={addTodoItem} />
               <Counter todos={todos} />
-              <TodosList 
+              <TodosList
                 todos={todos}
                 handleChangeProps={handleChange}
                 deleteTodoProps={deleteTodo}
@@ -93,8 +92,7 @@ const TodoContainer = () => {
         </Route>
       </Switch>
     </>
+  );
+};
 
-  )
-}
-
-export default TodoContainer 
+export default TodoContainer;

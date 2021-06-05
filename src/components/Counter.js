@@ -1,16 +1,17 @@
-import React from "react"
+import React from "react";
 
-const Counter = props => {
+const Counter = (props) => {
+  const todos = props.todos;
+  const totalCount = todos.length;
+  const completedTasks = todos.filter((todo) => todo.completed === true).length;
 
-    const todos = props.todos;
-    const totalCount = todos.length;
-    const completedTasks = todos.filter(todo => todo.completed === true).length;
-
-    return (
+  return (
     <>
-        <p>Tasks {completedTasks} of {totalCount}</p>
+      <p>
+        Tasks {completedTasks} of {totalCount}
+      </p>
     </>
-    )
-}
+  );
+};
 
-export default Counter
+export default Counter;
