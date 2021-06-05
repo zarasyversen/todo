@@ -1,16 +1,10 @@
 import React, { useState, useEffect } from "react";
 import styles from "./TodoItem.module.css";
-import { FaTrashAlt } from "react-icons/fa";
+import { FaTrashAlt, FaEdit } from "react-icons/fa";
 
 const TodoItem = (props) => {
   const [isEditing, setIsEditing] = useState(false);
-
-  useEffect(() => {
-    return () => {
-      console.log("cleaning up....");
-    };
-  }, []);
-
+  
   const handleEditing = () => {
     setIsEditing(true);
   };
@@ -23,8 +17,7 @@ const TodoItem = (props) => {
 
   const completedStyle = {
     fontStyle: "italic",
-    color: "#595959",
-    opacity: 0.4,
+    backgroundColor: "#d7ffd7",
     textDecoration: "line-through",
   };
 
@@ -39,8 +32,8 @@ const TodoItem = (props) => {
     editMode.display = "none";
   }
   return (
-    <li className={styles.item}>
-      <div onDoubleClick={handleEditing} style={viewMode}>
+    <li className={styles.item} style={completed ? completedStyle : null}>
+      <div className={styles.innerItem} style={viewMode}>
         <input
           type="checkbox"
           id={id}
@@ -48,11 +41,18 @@ const TodoItem = (props) => {
           checked={completed}
           onChange={() => props.handleChangeProps(id)}
         />
-        <button onClick={() => props.deleteTodoProps(id)}>
-          <FaTrashAlt />
-        </button>
-        <label htmlFor={id} style={completed ? completedStyle : null}>{title}</label>
-        <p>{updated ? 'Updated:' : 'Created:'}{time} on {day}</p>
+        <div className={styles.details}>
+        <label htmlFor={id}>{title}</label>
+        <small>{updated ? 'Updated:' : 'Created:'}{time} on {day}</small>
+        </div>
+        <div className={styles.actions}>
+          <button aria-label="Edit this item" onClick={() => handleEditing()}>
+            <FaEdit />
+          </button>
+          <button aria-label="Delete this item" onClick={() => props.deleteTodoProps(id)}>
+            <FaTrashAlt />
+          </button>
+        </div>
       </div>
       <input
         type="text"
