@@ -19,6 +19,7 @@
     padding: 0 20px;
   }
   
-  .navBar__link--active {
+  .navBar__linkActive {
     text-decoration: underline;
+    font-weight: bold;
   }

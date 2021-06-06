@@ -1,20 +1,31 @@
 import React from "react";
-import { Link, useRouteMatch, Route } from "react-router-dom";
-import SinglePage from "./SinglePage";
+import { NavLink, useRouteMatch, Route } from "react-router-dom";
+import Start from "./AboutPages/Start";
+import SinglePage from "./AboutPages/SinglePage";
 
 const About = () => {
   const { url, path } = useRouteMatch();
 
   return (
-    <div>
-      <ul>
-        <li>
-          <Link to={`${url}/about-app`}>About App</Link>
-        </li>
-        <li>
-          <Link to={`${url}/about-author`}>About Author</Link>
-        </li>
-      </ul>
+    <div className="about-page">
+      <aside>
+        <nav aria-label="Navigation for about page">
+          <ul>
+            <li>
+              <NavLink to={`${url}`} activeClassName="active" exact>Start</NavLink>
+            </li>
+            <li>
+              <NavLink to={`${url}/about-app`} activeClassName="active">About App</NavLink>
+            </li>
+            <li>
+              <NavLink to={`${url}/about-author`} activeClassName="active">About Author</NavLink>
+            </li>
+          </ul>
+        </nav>
+      </aside>
+      <Route path={`${path}`} exact>
+        <Start />
+      </Route>
       <Route path={`${path}/:slug`}>
         <SinglePage />
       </Route>

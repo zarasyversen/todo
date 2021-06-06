@@ -102,3 +102,70 @@ button:focus svg {
 .input-text::placeholder {
   color: #000;
 }
+
+.about-page {
+  display: flex;
+  flex-direction: column;
+  margin: 50px 16px;
+}
+
+.about-page main,
+.about-page aside {
+  background: var(--white);
+  border-radius: var(--border-radius);
+  padding: 16px;
+}
+
+.about-page ul  {
+  padding-left: 20px;
+}
+
+.about-page nav ul {
+  display: flex;
+}
+
+.about-page nav li {
+  margin: 0 30px 0 0;
+}
+
+.about-page a {
+  color: var(--black);
+  text-decoration: none;
+}
+
+.about-page a.active,
+.about-page a:hover,
+.about-page a:focus {
+  text-decoration: underline;
+}
+
+.about-page a.active {
+  font-weight: bold;
+}
+
+@media screen and (min-width: 768px) {
+
+  .about-page {
+    flex-direction: row;
+    justify-content: space-between;
+    max-width: 1000px;
+    margin: 50px auto;
+  }
+
+  .about-page main {
+    flex-basis: 70%;
+    
+  }
+  
+  .about-page aside {
+    flex-basis: 25%;
+  }
+
+  .about-page nav ul {
+    flex-direction: column;
+  }
+  
+  .about-page nav li {
+    margin: 20px 0;
+  }
+}

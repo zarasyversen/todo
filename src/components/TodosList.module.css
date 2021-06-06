@@ -23,7 +23,7 @@
 .todoSearch svg {
     position: absolute;
     top: 27px;
-    left: 20px;
+    left: 25px;
 }
 
 .todoSearch p {
@@ -31,7 +31,7 @@
 }
 
 input.todoSearchInput {
-    padding-left: 30px;
+    padding-left: 35px;
 }
 
 button.cancelSearch svg {

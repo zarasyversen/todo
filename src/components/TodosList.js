@@ -33,9 +33,10 @@ const TodosList = (props) => {
   const handleSearch = () => {
     const toggle = isSearching ? false : true;
     setIsSearching(toggle);
+    setSearchTerm('');
   };
 
-  const buttonText = isSearching ? 'Cancel' : 'Find';
+  const buttonText = isSearching ? 'Cancel Search' : 'Find';
   const buttonIcon = isSearching ? <FaPlus /> : <FaSearch />;
 
   return (

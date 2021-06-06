@@ -12,11 +12,13 @@ const Navbar = () => {
       id: 1,
       path: "/",
       text: "Home",
+      isExact: true,
     },
     {
       id: 2,
       path: "/about",
       text: "About",
+      isExact: false,
     },
   ];
 
@@ -26,14 +28,25 @@ const Navbar = () => {
         {links.map((link) => {
           return (
             <li key={link.id}>
-              <NavLink
-                to={link.path}
-                className={styles.navBar__link}
-                activeClassName="navBar__link--active"
-                isActive={isActive.bind(this, link.path)}
-              >
-                {link.text}
-              </NavLink>
+              {link.isExact && (
+                <NavLink
+                  exact
+                  to={link.path}
+                  className={styles.navBar__link}
+                  activeClassName={styles.navBar__linkActive}
+                >
+                  {link.text}
+                </NavLink>
+              )}
+              {!link.isExact && (
+                <NavLink
+                  to={link.path}
+                  className={styles.navBar__link}
+                  activeClassName={styles.navBar__linkActive}
+                >
+                  {link.text}
+                </NavLink>
+              )}
             </li>
           );
         })}
