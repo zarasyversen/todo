@@ -17,6 +17,7 @@ const SinglePages = () => {
             <li>Added an edit button (previously the todo was editable on double click</li>
             <li>Added ability to search and show filtered results</li>
             <li>Enhanced accessiblity and clearer UX</li>
+            <li>Added counter</li>
             <li>Restyled and reorganised CSS and file struture</li>
           </ul>
         </>,

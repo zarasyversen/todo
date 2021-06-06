@@ -10,6 +10,10 @@ const TodosList = (props) => {
   const [noResults, setNoResults] = useState(false);
 
   useEffect(() => {
+    setTodos(props.todos);
+  }, [props.todos])
+
+  useEffect(() => {
     if (searchTerm) {
       const filteredTodos = todos.filter((item) => {
         return (
