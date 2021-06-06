@@ -18,6 +18,16 @@
   --font-family: 'Poppins', sans-serif;
 }
 
+.sr-only {
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+}
+
 body {
   font-family: var(--font-family);
   line-height: 1.4;

@@ -14,21 +14,34 @@
 }
 
 .checkbox {
-  margin-right: 15px;
-  width: 25px;
-  height: 25px;
-  flex-basis: 10%;
+  border: 0; 
+  clip: rect(0 0 0 0); 
+  height: 1px; margin: -1px; 
+  overflow: hidden; 
+  padding: 0; 
+  position: absolute; 
+  width: 1px;
+}
+
+.checkboxLabel {
+  width: 30px;
+  height: 30px;
+  margin-right: 10px;
+  border: var(--border);
+  display: flex;
+  justify-content: center;
+  align-items: center;
   cursor: pointer;
+}
+
+.checkboxLabel svg {
+  width: 15px;
+  height: 15px;
 }
 
 .details {
   flex-basis: 80%;
   font-size: 1.2rem;
-}
-
-.item label {
-  display: block;
-  cursor: pointer;
 }
 
 .item .actions {

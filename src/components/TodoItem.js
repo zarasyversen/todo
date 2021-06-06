@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from "react";
 import styles from "./TodoItem.module.css";
-import { FaTrashAlt, FaEdit } from "react-icons/fa";
+import { FaTrashAlt, FaEdit, FaCheck } from "react-icons/fa";
 
 const TodoItem = (props) => {
   const [isEditing, setIsEditing] = useState(false);
@@ -41,6 +41,12 @@ const TodoItem = (props) => {
   return (
     <li className={styles.item} style={completed ? completedStyle : null}>
       <div className={styles.innerItem} style={viewMode}>
+        <label htmlFor={id} className={styles.checkboxLabel}>
+          <span className="sr-only">Task completed</span>
+          {completed && 
+            <FaCheck />
+          }
+        </label>
         <input
           type="checkbox"
           id={id}
@@ -49,7 +55,7 @@ const TodoItem = (props) => {
           onChange={() => props.handleChangeProps(id)}
         />
         <div className={styles.details}>
-          <label htmlFor={id}>{title}</label>
+          <p>{title}</p>
           <small>
             {updated ? "Updated " : "Created "}
             {time} on {day}
