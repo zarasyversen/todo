@@ -35,11 +35,13 @@ const TodosList = (props) => {
     setIsSearching(toggle);
   };
 
-  const buttonText = isSearching ? 'Cancel' : 'Find Task';
+  const buttonText = isSearching ? 'Cancel' : 'Find';
   const buttonIcon = isSearching ? <FaPlus /> : <FaSearch />;
 
   return (
     <div>
+      <div className={styles.topContainer}>
+      <h2>Tasks</h2>
       <button type="button" className={`button icon-button ${styles.searchBtn} ${isSearching ? styles.cancelSearch : ''}`} onClick={handleSearch}>
         {buttonText}
         {buttonIcon}
@@ -58,7 +60,7 @@ const TodosList = (props) => {
           {noResults && <p>Sorry, no results. Maybe add a new item?</p>}
         </div>
       )}
-
+      </div>
       <ul>
         {todos.map((todo) => (
           <TodoItem

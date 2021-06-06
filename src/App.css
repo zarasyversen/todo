@@ -95,6 +95,8 @@ button:focus svg {
   padding-right: 5px;
   padding-left: 10px;
   height: 45px;
+  border: var(--border);
+  border-radius: var(--border-radius);
 }
 
 .input-text::placeholder {

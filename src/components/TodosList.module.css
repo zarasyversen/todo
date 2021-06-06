@@ -1,10 +1,23 @@
 
+.topContainer {
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    grid-template-rows: 60px 1fr;
+    align-items: center;
+}
+
+.topContainer h2 {
+    grid-column: span 2;
+}
+
 .todoSearch {
     background: var(--white);
     border-radius: var(--border-radius);
     padding: 16px;
     position: relative;
     margin-bottom: 20px;
+    grid-row: 2;
+    grid-column: 1 / -1;
 }
 
 .todoSearch svg {
@@ -15,10 +28,6 @@
 
 .todoSearch p {
     margin-top: 10px;
-}
-
-.searchBtn {
-    margin-bottom: 10px;
 }
 
 input.todoSearchInput {
