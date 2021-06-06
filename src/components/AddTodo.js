@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import InputTodo from "./InputTodo";
+import AddTodoForm from "./AddTodoForm";
 import { FaPlus } from "react-icons/fa";
 
 const AddTodo = (props) => {
@@ -15,12 +15,12 @@ const AddTodo = (props) => {
 
   return (
     <div className="addTodo">
-        <button type="button" className={`addTodoBtn ${isAddingTodo ? 'addTodoBtn--cancel' : ''}`} onClick={handleAdding}>
+        <button type="button" className={`button addTodoBtn ${isAddingTodo ? 'addTodoBtn--cancel' : ''}`} onClick={handleAdding}>
             {buttonText}
             <FaPlus/>
         </button>
         {isAddingTodo && 
-            <InputTodo addTodoProps={addTodoItem} addingTodo={handleAdding}/>
+            <AddTodoForm addTodoProps={addTodoItem} addingTodo={handleAdding}/>
         }
     </div>
   )

@@ -1,0 +1,24 @@
+
+.navBar {
+    width: 100%;
+    background: var(--darker-base);
+    padding: 20px;
+  }
+  
+  .navBar ul {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    list-style: none;
+    margin: 0;
+  }
+  
+  .navBar__link {
+    color: var(--black);
+    text-decoration: none;
+    padding: 0 20px;
+  }
+  
+  .navBar__link--active {
+    text-decoration: underline;
+  }

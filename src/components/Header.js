@@ -2,7 +2,7 @@ import React from "react";
 
 const Header = () => {
   const headerStyle = {
-    padding: "20px 0",
+    padding: "20px 0 0",
     lineHeight: "1.5em",
   };
 
@@ -12,7 +12,6 @@ const Header = () => {
         style={{
           fontSize: "4rem",
           fontWeight: "600",
-          marginBottom: "2rem",
           lineHeight: "1em",
           textAlign: "center",
         }}

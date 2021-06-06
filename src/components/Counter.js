@@ -1,4 +1,5 @@
 import React from "react";
+import styles from "./Counter.module.css"
 
 const Counter = (props) => {
   const todos = props.todos;
@@ -7,8 +8,8 @@ const Counter = (props) => {
 
   return (
     <>
-      <p>
-        Tasks {completedTasks} of {totalCount}
+      <p className={styles.taskCounter}>
+        Completed Tasks {completedTasks} of {totalCount}
       </p>
     </>
   );

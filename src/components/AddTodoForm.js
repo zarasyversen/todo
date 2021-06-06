@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-const InputTodo = (props) => {
+const AddTodoForm = (props) => {
   const [inputText, setInputText] = useState({
     title: "",
   });
@@ -28,19 +28,22 @@ const InputTodo = (props) => {
   };
 
   return (
-    <form onSubmit={handleSubmit} className="form-container">
+    <form onSubmit={handleSubmit} className="addTodo-form">
+      <label htmlFor="new-todo" className="addTodo-form__label">Add a new task</label>
       <input
         type="text"
         name="title"
-        className="input-text"
+        id="new-todo"
+        placeholder="What do you need to do?"
+        className="input-text addTodo-form__input"
         value={inputText.title}
         onChange={onChange}
       />
-      <button className="input-submit">
+      <button className="button addTodo-form__button">
         Add
       </button>
     </form>
   );
 };
 
-export default InputTodo;
+export default AddTodoForm;

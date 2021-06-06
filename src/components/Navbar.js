@@ -1,5 +1,6 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
+import styles from "./Navbar.module.css";
 
 const Navbar = () => {
   // Fix as NavLink current class isn't working for me otherwise
@@ -20,14 +21,14 @@ const Navbar = () => {
   ];
 
   return (
-    <nav className="navBar">
+    <nav className={styles.navBar}>
       <ul>
         {links.map((link) => {
           return (
             <li key={link.id}>
               <NavLink
                 to={link.path}
-                className="navBar__link"
+                className={styles.navBar__link}
                 activeClassName="navBar__link--active"
                 isActive={isActive.bind(this, link.path)}
               >

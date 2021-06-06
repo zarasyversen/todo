@@ -4,12 +4,24 @@
   padding: 0;
 }
 
+:root {
+  --base: #f9dfdc;
+  --darker-base: #cab4b1;
+  --light-blue: #0a81ab;
+  --blue: #0c4271;
+  --black: #000000;
+  --white: #ffffff;
+  --border: 1px solid var(--darker-base);
+  --box-shadow: 0px 2px 3px 0px var(--darker-base);
+  --border-radius: 4px;
+}
+
 body {
   font-family: "Segoe UI", Arial, sans-serif;
   line-height: 1.4;
-  color: #444;
-  background: #fff;
-  height: 100vh;
+  color: var(--black);
+  min-height: 100vh;
+  background-color: var(--base);
 }
 .container {
   display: flex;
@@ -25,46 +37,100 @@ body {
   padding: 1rem 10px 4rem;
 }
 
-.form-container {
-  flex-basis: 100%;
-  margin: 20px 0;
-  display: flex;
-  align-items: center;
-  justify-content: space-evenly;
+ .button {
+  background: var(--blue);
+  padding: 10px 20px;
+  cursor: pointer;
+  color: var(--white);
+  border-radius: var(--border-radius);
+  border: none;
+  min-height: 45px;
+  font-size: 1em;
+ }
+
+ .button:hover{
+  background-color: var(--light-blue);
+ }
+
+ .button:focus {
+   outline: 1px dashed var(--black);
+ }
+
+ svg {
+  width: 20px;
+  height: 20px;
+  fill: var(--blue);
+  transition: fill 0.3s;
+}
+
+button:hover svg,
+button:focus svg {
+  fill: var(--light-blue);
 }
 
 .addTodo {
   width: 100%;
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
+  margin-bottom: 20px;
 }
 
 .addTodoBtn {
   display: flex;
   justify-content: center;
   align-items: center;
-  background: none;
-  border: 1px solid #eee;
-  padding: 10px;
-  font-size: 1.3em;
-  cursor: pointer;
 }
 
 .addTodoBtn svg {
+  fill: var(--white);
   margin-left: 10px;
   transition: transform .3s;
+  transform: scale(.9);
 }
 
-.addTodoBtn--cancel svg{
-  transform: rotate(45deg);
+.addTodoBtn:hover svg, 
+.addTodoBtn:focus svg {
+  fill: var(--white);
+  transform: scale(1);
 }
 
+.addTodoBtn--cancel svg {
+  transform: rotate(45deg) scale(.9);
+}
+
+.addTodoBtn--cancel:hover svg,
+.addTodoBtn--cancel:focus svg {
+  transform: rotate(45deg) scale(1);
+}
+
+.addTodo-form {
+  flex-basis: 100%;
+  margin: 20px 0;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  background: white;
+  padding: 16px;
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow);
+}
+
+.addTodo-form__label {
+  flex-basis: 100%;
+  display: block;
+  margin-bottom: 5px;
+}
+
+.addTodo-form__button {
+  width: 100%;
+  flex-basis: 100%;
+  margin: 10px 0;
+}
 
 .input-text {
   font-size: 1rem;
   font-weight: 400;
-  width: 85%;
+  width: 100%;
   padding-right: 5px;
   padding-left: 10px;
   height: 45px;
@@ -72,50 +138,4 @@ body {
 
 .input-text::placeholder {
   color: #000;
-}
-
-.input-submit {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background: transparent;
-  cursor: pointer;
-  height: 40px;
-  width: 40px;
-  transition: background-color 0.3s;
-}
-
-.input-submit:hover,
-.input-submit:focus {
-  background-color: rgb(162, 255, 162);
-}
-
-svg {
-  width: 20px;
-  height: 20px;
-  fill: #333;
-}
-
-.navBar {
-  width: 100%;
-  background: lightblue;
-  padding: 20px;
-}
-
-.navBar ul {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  list-style: none;
-  margin: 0;
-}
-
-.navBar__link {
-  color: black;
-  text-decoration: none;
-  padding: 0 20px;
-}
-
-.navBar__link--active {
-  text-decoration: underline;
 }

@@ -17,7 +17,7 @@ const TodoItem = (props) => {
 
   const completedStyle = {
     fontStyle: "italic",
-    backgroundColor: "#d7ffd7",
+    opacity: 0.7,
     textDecoration: "line-through",
   };
 
@@ -42,14 +42,14 @@ const TodoItem = (props) => {
           onChange={() => props.handleChangeProps(id)}
         />
         <div className={styles.details}>
-        <label htmlFor={id}>{title}</label>
-        <small>{updated ? 'Updated:' : 'Created:'}{time} on {day}</small>
+          <label htmlFor={id}>{title}</label>
+          <small>{updated ? 'Updated:' : 'Created:'}{time} on {day}</small>
         </div>
         <div className={styles.actions}>
-          <button aria-label="Edit this item" onClick={() => handleEditing()}>
+          <button className="button" aria-label="Edit this item" onClick={() => handleEditing()}>
             <FaEdit />
           </button>
-          <button aria-label="Delete this item" onClick={() => props.deleteTodoProps(id)}>
+          <button className="button" aria-label="Delete this item" onClick={() => props.deleteTodoProps(id)}>
             <FaTrashAlt />
           </button>
         </div>
