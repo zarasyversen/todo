@@ -5,31 +5,12 @@
     margin-bottom: 20px;
   }
   
-  .addTodoBtn {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  
-  .addTodoBtn svg {
-    fill: var(--white);
-    margin-left: 10px;
-    transition: transform .3s;
-    transform: scale(.9);
-  }
-  
-  .addTodoBtn:hover svg, 
-  .addTodoBtn:focus svg {
-    fill: var(--white);
-    transform: scale(1);
-  }
-  
-  .addTodoBtnCancel svg {
+  button.addTodoBtnCancel svg {
     transform: rotate(45deg) scale(.9);
   }
   
-  .addTodoBtnCancel:hover svg,
-  .addTodoBtnCancel:focus svg {
+  button.addTodoBtnCancel:hover svg,
+  button.addTodoBtnCancel:focus svg {
     transform: rotate(45deg) scale(1);
   }
   

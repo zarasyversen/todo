@@ -16,7 +16,7 @@ const AddTodo = (props) => {
 
   return (
     <div className={styles.addTodo}>
-        <button type="button" className={`button ${styles.addTodoBtn} ${isAddingTodo ? `${styles.addTodoBtnCancel}` : ''}`} onClick={handleAdding}>
+        <button type="button" className={`button icon-button ${styles.addTodoBtn} ${isAddingTodo ? `${styles.addTodoBtnCancel}` : ''}`} onClick={handleAdding}>
             {buttonText}
             <FaPlus/>
         </button>

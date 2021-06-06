@@ -1,0 +1,35 @@
+
+.todoSearch {
+    background: var(--white);
+    border-radius: var(--border-radius);
+    padding: 16px;
+    position: relative;
+    margin-bottom: 20px;
+}
+
+.todoSearch svg {
+    position: absolute;
+    top: 27px;
+    left: 20px;
+}
+
+.todoSearch p {
+    margin-top: 10px;
+}
+
+.searchBtn {
+    margin-bottom: 10px;
+}
+
+input.todoSearchInput {
+    padding-left: 30px;
+}
+
+button.cancelSearch svg {
+    transform: rotate(-45deg);
+}
+
+button.cancelSearch:hover svg,
+button.cancelSearch:focus svg {
+    transform: rotate(-45deg);
+}
