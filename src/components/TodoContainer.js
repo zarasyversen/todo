@@ -5,6 +5,7 @@ import NotMatch from "../pages/NoMatch";
 import { v4 as uuidv4 } from "uuid";
 import Header from "./Header";
 import InputTodo from "./InputTodo";
+import AddTodo from "./AddTodo";
 import TodosList from "./TodosList";
 import Navbar from "./Navbar";
 import Counter from "./Counter";
@@ -92,7 +93,7 @@ const TodoContainer = () => {
           <div className="container">
             <div className="inner">
               <Header />
-              <InputTodo addTodoProps={addTodoItem} />
+              <AddTodo addTodoProps={addTodoItem} />
               <Counter todos={todos} />
               <TodosList
                 todos={todos}

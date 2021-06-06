@@ -22,18 +22,44 @@ body {
 
 .inner {
   width: 100%;
-  padding: 8rem 10px 4rem;
+  padding: 1rem 10px 4rem;
 }
 
 .form-container {
-  width: 100%;
-  margin-bottom: 20px;
+  flex-basis: 100%;
+  margin: 20px 0;
   display: flex;
   align-items: center;
-  border-radius: calc(0.5 * 100px);
-  box-shadow: 0 1px 6px 0 rgba(0, 0, 0, 0.38);
   justify-content: space-evenly;
 }
+
+.addTodo {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.addTodoBtn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: none;
+  border: 1px solid #eee;
+  padding: 10px;
+  font-size: 1.3em;
+  cursor: pointer;
+}
+
+.addTodoBtn svg {
+  margin-left: 10px;
+  transition: transform .3s;
+}
+
+.addTodoBtn--cancel svg{
+  transform: rotate(45deg);
+}
+
 
 .input-text {
   font-size: 1rem;
@@ -41,7 +67,6 @@ body {
   width: 85%;
   padding-right: 5px;
   padding-left: 10px;
-  border-radius: calc(0.5 * 100px);
   height: 45px;
 }
 
@@ -55,7 +80,6 @@ body {
   align-items: center;
   background: transparent;
   cursor: pointer;
-  border-radius: 50%;
   height: 40px;
   width: 40px;
   transition: background-color 0.3s;
@@ -70,12 +94,6 @@ svg {
   width: 20px;
   height: 20px;
   fill: #333;
-}
-
-.input-text,
-.input-submit {
-  outline: none;
-  border: none;
 }
 
 .navBar {
