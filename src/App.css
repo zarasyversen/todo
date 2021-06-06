@@ -68,65 +68,6 @@ button:focus svg {
   fill: var(--light-blue);
 }
 
-.addTodo {
-  width: 100%;
-  display: flex;
-  flex-wrap: wrap;
-  margin-bottom: 20px;
-}
-
-.addTodoBtn {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.addTodoBtn svg {
-  fill: var(--white);
-  margin-left: 10px;
-  transition: transform .3s;
-  transform: scale(.9);
-}
-
-.addTodoBtn:hover svg, 
-.addTodoBtn:focus svg {
-  fill: var(--white);
-  transform: scale(1);
-}
-
-.addTodoBtn--cancel svg {
-  transform: rotate(45deg) scale(.9);
-}
-
-.addTodoBtn--cancel:hover svg,
-.addTodoBtn--cancel:focus svg {
-  transform: rotate(45deg) scale(1);
-}
-
-.addTodo-form {
-  flex-basis: 100%;
-  margin: 20px 0;
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  background: white;
-  padding: 16px;
-  border-radius: var(--border-radius);
-  box-shadow: var(--box-shadow);
-}
-
-.addTodo-form__label {
-  flex-basis: 100%;
-  display: block;
-  margin-bottom: 5px;
-}
-
-.addTodo-form__button {
-  width: 100%;
-  flex-basis: 100%;
-  margin: 10px 0;
-}
-
 .input-text {
   font-size: 1rem;
   font-weight: 400;

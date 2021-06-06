@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import AddTodoForm from "./AddTodoForm";
 import { FaPlus } from "react-icons/fa";
+import styles from "./AddTodo.module.css";
 
 const AddTodo = (props) => {
   const [isAddingTodo, setAddingTodo] = useState(false);
@@ -14,8 +15,8 @@ const AddTodo = (props) => {
   const buttonText = isAddingTodo ? 'Cancel' : 'Add New';
 
   return (
-    <div className="addTodo">
-        <button type="button" className={`button addTodoBtn ${isAddingTodo ? 'addTodoBtn--cancel' : ''}`} onClick={handleAdding}>
+    <div className={styles.addTodo}>
+        <button type="button" className={`button ${styles.addTodoBtn} ${isAddingTodo ? `${styles.addTodoBtnCancel}` : ''}`} onClick={handleAdding}>
             {buttonText}
             <FaPlus/>
         </button>
