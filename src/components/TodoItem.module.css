@@ -1,5 +1,4 @@
 .item {
-  font-size: 1.2rem;
   list-style-type: none;
   padding: 17px 10px 0;
   background-color: var(--white);
@@ -19,14 +18,17 @@
   width: 25px;
   height: 25px;
   flex-basis: 10%;
+  cursor: pointer;
 }
 
 .details {
   flex-basis: 80%;
+  font-size: 1.2rem;
 }
 
 .item label {
   display: block;
+  cursor: pointer;
 }
 
 .item .actions {
@@ -50,4 +52,6 @@
   width: 100%;
   padding: 10px;
   border: var(--border);
+  margin-bottom: 20px;
+  font-size: 1.2rem;
 }

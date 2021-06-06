@@ -1,13 +1,20 @@
-import React, { useState } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import styles from "./TodoItem.module.css";
 import { FaTrashAlt, FaEdit } from "react-icons/fa";
 
 const TodoItem = (props) => {
   const [isEditing, setIsEditing] = useState(false);
-  
+  const editInput = useRef(null);
+
   const handleEditing = () => {
     setIsEditing(true);
   };
+
+  useEffect(() => {
+    if (isEditing) {
+      editInput.current.focus();
+    }
+  }, [isEditing]);
 
   const handleUpdateDone = (event) => {
     if (event.key === "Enter") {
@@ -43,27 +50,44 @@ const TodoItem = (props) => {
         />
         <div className={styles.details}>
           <label htmlFor={id}>{title}</label>
-          <small>{updated ? 'Updated:' : 'Created:'}{time} on {day}</small>
+          <small>
+            {updated ? "Updated " : "Created "}
+            {time} on {day}
+          </small>
         </div>
         <div className={styles.actions}>
-          <button className="button" aria-label="Edit this item" onClick={() => handleEditing()}>
+          <button
+            className="button"
+            aria-label="Edit this item"
+            onClick={() => handleEditing(id)}
+          >
             <FaEdit />
           </button>
-          <button className="button" aria-label="Delete this item" onClick={() => props.deleteTodoProps(id)}>
+          <button
+            className="button"
+            aria-label="Delete this item"
+            onClick={() => props.deleteTodoProps(id)}
+          >
             <FaTrashAlt />
           </button>
         </div>
       </div>
-      <input
-        type="text"
-        className={styles.textInput}
-        value={title}
-        style={editMode}
-        onChange={(e) => {
-          props.setUpdate(e.target.value, id);
-        }}
-        onKeyDown={handleUpdateDone}
-      />
+      <div style={editMode} className="editTodo">
+        <label htmlFor={`edit-${id}`}>
+          Edit your task, press enter when done
+        </label>
+        <input
+          type="text"
+          id={`edit-${id}`}
+          className={styles.textInput}
+          value={title}
+          onChange={(e) => {
+            props.setUpdate(e.target.value, id);
+          }}
+          ref={editInput}
+          onKeyDown={handleUpdateDone}
+        />
+      </div>
     </li>
   );
 };

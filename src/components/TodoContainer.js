@@ -36,13 +36,21 @@ const TodoContainer = () => {
   };
 
   const getCurrentDay = () => {
-    return new Date().toLocaleString("en-GB", { weekday: "long" });
+    const date = new Date();
+    const currentDate = date.getDate()+'/'+(date.getMonth()+1)+'/'+date.getFullYear();
+    const currentDay = date.toLocaleString("en-GB", { weekday: "long" })
+    return `${currentDay} (${currentDate})`;
   }
 
   const getCurrentTime = () => {
     const now = new Date();
     const currentHours = now.getHours();
-    const currentMinutes = now.getMinutes();
+    let currentMinutes = now.getMinutes();
+
+    if (currentMinutes < 10 ) {
+      currentMinutes = `0${currentMinutes}`;
+    }
+
 
     return `${currentHours}:${currentMinutes}`;
   }
