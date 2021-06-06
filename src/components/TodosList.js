@@ -11,7 +11,7 @@ const TodosList = (props) => {
 
   useEffect(() => {
     setTodos(props.todos);
-  }, [props.todos])
+  }, [props.todos]);
 
   useEffect(() => {
     if (searchTerm) {
@@ -37,34 +37,40 @@ const TodosList = (props) => {
   const handleSearch = () => {
     const toggle = isSearching ? false : true;
     setIsSearching(toggle);
-    setSearchTerm('');
+    setSearchTerm("");
   };
 
-  const buttonText = isSearching ? 'Cancel Search' : 'Find';
+  const buttonText = isSearching ? "Cancel Search" : "Find";
   const buttonIcon = isSearching ? <FaPlus /> : <FaSearch />;
 
   return (
     <div>
       <div className={styles.topContainer}>
-      <h2>Tasks</h2>
-      <button type="button" className={`button icon-button ${styles.searchBtn} ${isSearching ? styles.cancelSearch : ''}`} onClick={handleSearch}>
-        {buttonText}
-        {buttonIcon}
-      </button>
-      {isSearching && (
-        <div className={styles.todoSearch}>
-          <FaSearch />
-          <input
-            className={`input-text ${styles.todoSearchInput}`}
-            value={searchTerm}
-            onChange={(e) => {
-              setSearchTerm(e.target.value);
-            }}
-            placeholder="Search for task..."
-          />
-          {noResults && <p>Sorry, no results. Maybe add a new item?</p>}
-        </div>
-      )}
+        <h2>Tasks</h2>
+        <button
+          type="button"
+          className={`button icon-button ${styles.searchBtn} ${
+            isSearching ? styles.cancelSearch : ""
+          }`}
+          onClick={handleSearch}
+        >
+          {buttonText}
+          {buttonIcon}
+        </button>
+        {isSearching && (
+          <div className={styles.todoSearch}>
+            <FaSearch />
+            <input
+              className={`input-text ${styles.todoSearchInput}`}
+              value={searchTerm}
+              onChange={(e) => {
+                setSearchTerm(e.target.value);
+              }}
+              placeholder="Search for task..."
+            />
+            {noResults && <p>Sorry, no results. Maybe add a new item?</p>}
+          </div>
+        )}
       </div>
       <ul>
         {todos.map((todo) => (

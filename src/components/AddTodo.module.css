@@ -4,6 +4,10 @@
     flex-wrap: wrap;
     margin-bottom: 20px;
   }
+
+  .addTodoEmpty {
+    justify-content: center;
+  }
   
   button.addTodoBtnCancel svg {
     transform: rotate(45deg) scale(.9);

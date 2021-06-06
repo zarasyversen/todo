@@ -37,6 +37,10 @@ body {
   padding: 1rem 10px 4rem;
 }
 
+.inner-top {
+  margin-bottom: 30px;
+}
+
  .button {
   background: var(--blue);
   padding: 10px 20px;
@@ -121,6 +125,7 @@ button:focus svg {
 }
 
 .about-page nav ul {
+  list-style: none;
   display: flex;
 }
 
@@ -141,6 +146,14 @@ button:focus svg {
 
 .about-page a.active {
   font-weight: bold;
+}
+
+.about-page .section {
+  margin: 20px 0;
+}
+
+.about-page .sectionHeading {
+  margin-bottom: 10px;
 }
 
 @media screen and (min-width: 768px) {

@@ -15,10 +15,10 @@ const About = () => {
               <NavLink to={`${url}`} activeClassName="active" exact>Start</NavLink>
             </li>
             <li>
-              <NavLink to={`${url}/about-app`} activeClassName="active">About App</NavLink>
+              <NavLink to={`${url}/about-app`} activeClassName="active">About this app</NavLink>
             </li>
             <li>
-              <NavLink to={`${url}/about-author`} activeClassName="active">About Author</NavLink>
+              <NavLink to={`${url}/about-author`} activeClassName="active">About me</NavLink>
             </li>
           </ul>
         </nav>

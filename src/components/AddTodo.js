@@ -6,6 +6,7 @@ import styles from "./AddTodo.module.css";
 const AddTodo = (props) => {
   const [isAddingTodo, setAddingTodo] = useState(false);
   const addTodoItem = props.addTodoProps;
+  const hasTodos = props.todos.length > 0;
 
   const handleAdding = () => {
     const current = isAddingTodo ? false : true;
@@ -15,7 +16,7 @@ const AddTodo = (props) => {
   const buttonText = isAddingTodo ? 'Cancel' : 'Add New';
 
   return (
-    <div className={styles.addTodo}>
+    <div className={`${styles.addTodo} ${!hasTodos ? `${styles.addTodoEmpty}` : ''}`}>
         <button type="button" className={`button icon-button ${styles.addTodoBtn} ${isAddingTodo ? `${styles.addTodoBtnCancel}` : ''}`} onClick={handleAdding}>
             {buttonText}
             <FaPlus/>

@@ -6,6 +6,7 @@ import { v4 as uuidv4 } from "uuid";
 import Header from "./Header";
 import AddTodo from "./AddTodo";
 import TodosList from "./TodosList";
+import EmptyTodosList from "./EmptyTodosList";
 import Navbar from "./Navbar";
 import Counter from "./Counter";
 
@@ -91,15 +92,22 @@ const TodoContainer = () => {
         <Route exact path="/">
           <div className="container">
             <div className="inner">
-              <Header />
-              <Counter todos={todos} />
-              <AddTodo addTodoProps={addTodoItem} />
+              <div className="inner-top">
+                <Header />
+                <Counter todos={todos} />
+                {todos.length === 0 && 
+                  <EmptyTodosList />
+                }
+              </div>
+              <AddTodo addTodoProps={addTodoItem} todos={todos} />
+              {todos.length > 0 && 
               <TodosList
                 todos={todos}
                 handleChangeProps={handleChange}
                 deleteTodoProps={deleteTodo}
                 setUpdate={setUpdate}
-              />
+                />
+              }
             </div>
           </div>
         </Route>

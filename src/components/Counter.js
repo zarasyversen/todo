@@ -5,12 +5,16 @@ const Counter = (props) => {
   const todos = props.todos;
   const totalCount = todos.length;
   const completedTasks = todos.filter((todo) => todo.completed === true).length;
-
+  const noTasks = totalCount === 0;
+  
   return (
     <>
-      <p className={styles.taskCounter}>
-        Completed Tasks {completedTasks} of {totalCount}
-      </p>
+      {!noTasks && 
+          <p className={styles.taskCounter}>
+          Hey, you have completed {completedTasks} of {totalCount} tasks!
+        </p>
+      }
+    
     </>
   );
 };

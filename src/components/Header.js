@@ -16,7 +16,7 @@ const Header = () => {
           textAlign: "center",
         }}
       >
-        Tasks List
+        Your list of tasks
       </h1>
     </header>
   );
