@@ -142,6 +142,7 @@ button:focus svg {
 .about-page nav ul {
   list-style: none;
   display: flex;
+  padding-left: 0;
 }
 
 .about-page nav li {
@@ -165,6 +166,10 @@ button:focus svg {
 
 .about-page .section {
   margin: 20px 0;
+}
+
+.about-page .section a {
+  text-decoration: underline;
 }
 
 .about-page .sectionHeading {
