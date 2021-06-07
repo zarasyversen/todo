@@ -43,9 +43,7 @@ const TodoItem = (props) => {
       <div className={styles.innerItem} style={viewMode}>
         <label htmlFor={id} className={styles.checkboxLabel}>
           <span className="sr-only">Task completed</span>
-          {completed && 
-            <FaCheck />
-          }
+          {completed && <FaCheck />}
         </label>
         <input
           type="checkbox"

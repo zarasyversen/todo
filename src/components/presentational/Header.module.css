@@ -1,0 +1,11 @@
+.header {
+    padding: 20px 0 0;
+    line-height: 1.5em;
+}
+
+.headerHeading {
+    font-size: 4rem;
+    font-weight: 600;
+    line-height: 1em;
+    text-align: center;
+}

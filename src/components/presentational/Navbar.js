@@ -3,10 +3,6 @@ import { NavLink } from "react-router-dom";
 import styles from "./Navbar.module.css";
 
 const Navbar = () => {
-  // Fix as NavLink current class isn't working for me otherwise
-  const isActive = (path, match, location) =>
-    !!(match || path === location.pathname);
-
   const links = [
     {
       id: 1,

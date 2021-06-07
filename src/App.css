@@ -176,6 +176,20 @@ button:focus svg {
   margin-bottom: 10px;
 }
 
+.not-found {
+  max-width: 600px;
+  background: var(--white);
+  padding: 16px;
+  border-radius: var(--border-radius);
+  margin: 20px auto;
+  text-align: center;
+}
+
+.not-found h1 {
+  font-size: 2em;
+  margin: 20px 0 30px;
+}
+
 @media screen and (min-width: 768px) {
 
   .about-page {

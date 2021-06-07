@@ -6,11 +6,6 @@
     align-items: center;
 }
 
-.topContainerEmpty {
-    margin-top: 30px;
-    text-align: center;
-}
-
 .topContainer h2 {
     grid-column: span 2;
 }
